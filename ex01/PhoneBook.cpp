@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 14:36:01 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/06 14:13:19 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/06 15:04:46 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iomanip>
 #include "PhoneBook.hpp"
 #include <string.h>
+#include <cstring>
 
 PhoneBook::PhoneBook( void ) {
 
@@ -70,19 +71,31 @@ void	PhoneBook::add( int i ) {
 
 void	PhoneBook::search( int max ) {
 
+	int			strsize;
+	std::string	temp;
+
 	std::cout << std::endl << "_____________________________________________" << std::endl;
 	std::cout << "|" << std::setw(10) << "INDEX" << "|" << std::setw(10) << "FIRST NAME" << "|" << std::setw(10) << "LAST NAME" << "|" << std::setw(10) << "NICKNAME" << "|" << std::endl;
-	for(int i = 0; i < max + 1; i++)
+	for (int i = 0; i < max + 1; i++)
 	{
 		std::cout << "|";
 		std::cout << std::setw(10);
 		std::cout << i << "|";
-		std::cout << std::setw(10);
-		std::cout << this->_contact[i].get_value(FIRST_NAME) << "|";
-		std::cout << std::setw(10);
-		std::cout << this->_contact[i].get_value(LAST_NAME) << "|";
-		std::cout << std::setw(10);
-		std::cout << this->_contact[i].get_value(NICKNAME) << "|" << std::endl << std::endl;
+		for (int j = 0; j < 3; j++)
+		{
+			strsize = this->_contact[i].get_value(j).size();
+			if (strsize > 10)
+			{
+				std::cout << std::setw(9);
+				std::cout << this->_contact[i].get_value(j).substr(0, 9) << "." << "|";
+			}
+			else
+			{
+				std::cout << std::setw(10);
+				std::cout << this->_contact[i].get_value(j) << "|";
+			}
+		}
+		std::cout << std::endl;
 	}
 }
 
