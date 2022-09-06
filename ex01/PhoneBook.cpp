@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 14:36:01 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/06 14:08:10 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/06 14:13:19 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	PhoneBook::add( int i ) {
 
 void	PhoneBook::search( int max ) {
 
-	std::cout << std::endl << "--------------------------------------------" << std::endl;
+	std::cout << std::endl << "_____________________________________________" << std::endl;
 	std::cout << "|" << std::setw(10) << "INDEX" << "|" << std::setw(10) << "FIRST NAME" << "|" << std::setw(10) << "LAST NAME" << "|" << std::setw(10) << "NICKNAME" << "|" << std::endl;
 	for(int i = 0; i < max + 1; i++)
 	{
@@ -82,7 +82,7 @@ void	PhoneBook::search( int max ) {
 		std::cout << std::setw(10);
 		std::cout << this->_contact[i].get_value(LAST_NAME) << "|";
 		std::cout << std::setw(10);
-		std::cout << this->_contact[i].get_value(NICKNAME) << "|" << std::endl;
+		std::cout << this->_contact[i].get_value(NICKNAME) << "|" << std::endl << std::endl;
 	}
 }
 
