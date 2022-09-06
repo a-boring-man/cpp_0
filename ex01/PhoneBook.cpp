@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 14:36:01 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/06 16:02:46 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/06 16:30:24 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	PhoneBook::initial_display( int max ) {
 
 	std::cout << std::endl << "_____________________________________________" << std::endl;
 	std::cout << "|" << std::setw(10) << "INDEX" << "|" << std::setw(10) << "FIRST NAME" << "|" << std::setw(10) << "LAST NAME" << "|" << std::setw(10) << "NICKNAME" << "|" << std::endl;
-	for (int contact_nbr = 0; contact_nbr < max + 1; contact_nbr++)
+	for (int contact_nbr = 0; contact_nbr < max; contact_nbr++)
 	{
 		std::cout << "|";
 		std::cout << std::setw(10);

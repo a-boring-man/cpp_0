@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:55:14 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/06 15:11:26 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/06 16:33:45 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,39 @@
 
 int	main( void ) {
 
-	PhoneBook	test;
-	std::string	str;
-	int	i = 0;
+	PhoneBook		phonebook;
+	std::string		imput;
 
-	test.add(i);
-	test.add(++i);
-	test.search(i);
+	int	contact_nbr = 0;
+	int	max_contact = 0;
+
+	std::cout << "________________________________________" << std::endl;
+	std::cout << std::endl << "Welcome to My Awesome PhoneBook" << std::endl;
+	std::cout << std::endl << "you can add a contact using the command ADD" << std::endl;
+	std::cout << std::endl << "you can then browse trough your contact using SEARCH" << std::endl;
+	std::cout << std::endl << "finaly you can kill me by typing EXIT but i'll forget all your data as a punishment" << std::endl;
+	std::cout << "________________________________________" << std::endl << std::endl;
+	
+	std::cin >> imput;
+	while (imput.compare("EXIT"))
+	{
+		if (!(imput.compare("ADD")))
+		{
+			if (contact_nbr > 7)
+				contact_nbr = 0;
+			phonebook.add(contact_nbr++);
+		}
+
+		max_contact = std::max(max_contact, contact_nbr);
+
+		if (!(imput.compare("SEARCH")))
+		{
+			phonebook.search(max_contact);
+		}
+		std::cin >> imput;
+	}
+
+	std::cout << std::endl << "i'll miss you <3" << std::endl;
+	
 	return (0);
 }
