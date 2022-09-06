@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 11:46:22 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/05 16:41:07 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/06 12:59:44 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ enum info {
 };
 
 class	Contact{
-	
+
 public :
 
 	Contact( void );

@@ -6,16 +6,20 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:55:14 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/05 16:44:51 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/06 14:09:20 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 int	main( void ) {
 
-	Contact	test;
+	PhoneBook	test;
+	std::string	str;
+	int	i = 0;
 
-	test.get_value(NICKNAME);
+	test.add(i);
+	test.add(++i);
+	test.search(i);
 	return (0);
 }

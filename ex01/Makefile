@@ -6,13 +6,13 @@
 #    By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/05 11:26:49 by jrinna            #+#    #+#              #
-#    Updated: 2022/09/05 14:32:16 by jrinna           ###   ########lyon.fr    #
+#    Updated: 2022/09/06 10:01:17 by jrinna           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-SRC := Contact.cpp main.cpp
+SRC := Contact.cpp main.cpp PhoneBook.cpp
 OBJ := ${SRC:.cpp=.o}
-INC := Contact.hpp
+INC := Contact.hpp PhoneBook.hpp
 CC := c++ -std=c++98
 CFLAGS := -Wall -Wextra -Werror
 NAME := My_Awesome_PhoneBook

@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 11:43:52 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/05 16:43:20 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/06 09:32:55 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Contact::Contact( void ) {
 	
-	std::cout << "Contact's default constructor called" << std::endl;
+	std::cout << "Contact's default constructor has been called" << std::endl;
 	return;
 }
 
 Contact::~Contact( void ) {
 	
-	std::cout << "Contact's default destructor called" << std::endl;
+	std::cout << "Contact's default destructor has been called" << std::endl;
 	return;
 }
 
