@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 14:36:01 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/06 15:04:46 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/06 16:02:46 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,33 +69,71 @@ void	PhoneBook::add( int i ) {
 	return;
 }
 
-void	PhoneBook::search( int max ) {
+void	PhoneBook::initial_display( int max ) {
 
 	int			strsize;
 	std::string	temp;
 
 	std::cout << std::endl << "_____________________________________________" << std::endl;
 	std::cout << "|" << std::setw(10) << "INDEX" << "|" << std::setw(10) << "FIRST NAME" << "|" << std::setw(10) << "LAST NAME" << "|" << std::setw(10) << "NICKNAME" << "|" << std::endl;
-	for (int i = 0; i < max + 1; i++)
+	for (int contact_nbr = 0; contact_nbr < max + 1; contact_nbr++)
 	{
 		std::cout << "|";
 		std::cout << std::setw(10);
-		std::cout << i << "|";
-		for (int j = 0; j < 3; j++)
+		std::cout << contact_nbr << "|";
+		for (int contact_field = 0; contact_field < 3; contact_field++)
 		{
-			strsize = this->_contact[i].get_value(j).size();
+			strsize = this->_contact[contact_nbr].get_value(contact_field).size();
 			if (strsize > 10)
 			{
 				std::cout << std::setw(9);
-				std::cout << this->_contact[i].get_value(j).substr(0, 9) << "." << "|";
+				std::cout << this->_contact[contact_nbr].get_value(contact_field).substr(0, 9) << "." << "|";
 			}
 			else
 			{
 				std::cout << std::setw(10);
-				std::cout << this->_contact[i].get_value(j) << "|";
+				std::cout << this->_contact[contact_nbr].get_value(contact_field) << "|";
 			}
 		}
 		std::cout << std::endl;
 	}
+	std::cout << std::endl;
+
+	return;
 }
 
+void	PhoneBook::search( int max ) {
+
+	if (!max)
+	{
+		std::cout << "no contact has been saved, please add a contact first using the command ADD" << std::endl;
+		return;
+	}
+	
+	PhoneBook::initial_display(max);
+
+	std::string	imput;
+	
+	std::cout << "Please enter a contact number" <<std::endl;
+	
+	std::cin >> imput;
+	if (!(imput.compare("EXIT")))
+		return;
+	int	contact_nbr = stoi(imput);
+	while (contact_nbr < 0 || contact_nbr > max)
+	{
+		std::cout << "this contact doesn't exist, please enter a contact number" << std::endl;
+		std::cin >> contact_nbr;
+	}
+	std::cout << std::endl;
+
+	std::cout << "FIRST NAME :" << this->_contact[contact_nbr].get_value(FIRST_NAME) << std::endl;
+	std::cout << "LAST NAME :" << this->_contact[contact_nbr].get_value(LAST_NAME) << std::endl;
+	std::cout << "NICKNAME :" << this->_contact[contact_nbr].get_value(NICKNAME) << std::endl;
+	std::cout << "PHONE NUMBER :" << this->_contact[contact_nbr].get_value(PHONE_NUMBER) << std::endl;
+	std::cout << "DARKEST SECRET :" << this->_contact[contact_nbr].get_value(DARKEST_SECRET) << std::endl;
+
+	std::cout << std::endl;
+
+	return;
+}

@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:55:14 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/06 14:11:12 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/06 15:11:26 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main( void ) {
 	int	i = 0;
 
 	test.add(i);
+	test.add(++i);
 	test.search(i);
 	return (0);
 }
