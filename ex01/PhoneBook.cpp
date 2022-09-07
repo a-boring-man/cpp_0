@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 14:36:01 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/06 16:39:01 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/07 10:11:33 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,9 +116,18 @@ void	PhoneBook::search( int max ) {
 	
 	std::cout << "Please enter a contact number" <<std::endl;
 	
-	std::cin >> imput;
+	imput = ft_getline();
+	
 	if (!(imput.compare("EXIT")))
 		return;
+	while (imput.size() > 1 || imput.data()[0] < 0 + '0' || imput.data()[0] > max - 1 + '0')
+	{
+		std::cout << "their is no contact number : \"" << imput << "\" please enter a correct answer" << std::endl;
+		
+		imput = ft_getline();
+		if (!(imput.compare("EXIT")))
+			return;
+	}
 	int	contact_nbr = stoi(imput);
 	while (contact_nbr < 0 || contact_nbr > max - 1)
 	{

@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:55:14 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/06 16:33:45 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/07 09:21:25 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main( void ) {
 		std::cin >> imput;
 	}
 
-	std::cout << std::endl << "i'll miss you <3" << std::endl;
+	std::cout << std::endl << "i'll miss you <3" << std::endl << std::endl;
 	
 	return (0);
 }
