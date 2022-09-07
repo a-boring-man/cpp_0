@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:55:14 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/07 09:21:25 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/07 11:00:14 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main( void ) {
 	std::cout << "________________________________________" << std::endl << std::endl;
 	
 	std::cin >> imput;
+	if (std::cin.eof())
+		return (0);
 	while (imput.compare("EXIT"))
 	{
 		if (!(imput.compare("ADD")))
@@ -44,6 +46,8 @@ int	main( void ) {
 			phonebook.search(max_contact);
 		}
 		std::cin >> imput;
+		if (std::cin.eof())
+			return (0);
 	}
 
 	std::cout << std::endl << "i'll miss you <3" << std::endl << std::endl;
