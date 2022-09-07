@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 14:35:59 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/07 10:49:58 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/07 16:26:44 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	PhoneBook {
 	public :
 
 		PhoneBook( void );
-		~PhoneBook( void );
+		virtual ~PhoneBook( void );
 
 		void	add( int i );
 		void	search( int max );
@@ -29,6 +29,7 @@ class	PhoneBook {
 	private :
 
 		Contact		_contact[8];
+		std::string	ft_getline( void );
 		
 };
 
