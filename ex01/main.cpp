@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 13:55:14 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/07 11:00:14 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/08 10:47:34 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main( void ) {
 	std::cout << std::endl << "finaly you can kill me by typing EXIT but i'll forget all your data as a punishment" << std::endl;
 	std::cout << "________________________________________" << std::endl << std::endl;
 	
-	std::cin >> imput;
+	getline(std::cin, imput);
 	if (std::cin.eof())
 		return (0);
 	while (imput.compare("EXIT"))
@@ -45,9 +45,9 @@ int	main( void ) {
 		{
 			phonebook.search(max_contact);
 		}
-		std::cin >> imput;
+		getline(std::cin, imput);
 		if (std::cin.eof())
-			return (0);
+			return(0);
 	}
 
 	std::cout << std::endl << "i'll miss you <3" << std::endl << std::endl;

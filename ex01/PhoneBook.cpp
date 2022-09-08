@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 14:36:01 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/07 16:43:09 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2022/09/08 10:58:05 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,42 +28,73 @@ PhoneBook::~PhoneBook( void ) {
 	return;
 }
 
-std::string	PhoneBook::ft_getline( void ) {
-
-	std::string	str;
-
-	getline(std::cin, str);
-	while (str.empty())
-	{
-		std::cout << "I'm sure you can think of something" << std::endl;
-		getline(std::cin, str);
-	}
-
-	return (str);
-}
-
 void	PhoneBook::add( int i ) {
 
 	std::string	imput;
 
 	std::cout << "Please enter you contact first name" << std::endl;
-	imput = PhoneBook::ft_getline();
+	getline(std::cin, imput);
+	if (std::cin.eof())
+		return;
+	while (imput.empty())
+	{
+		std::cout << "I'm sure you can think of something" << std::endl;
+		getline(std::cin, imput);
+		if (std::cin.eof())
+			return;
+	}
 	_contact[i].set_value(FIRST_NAME, imput);
 
 	std::cout << "Please enter you contact last name" << std::endl;
-	imput = PhoneBook::ft_getline();
+	getline(std::cin, imput);
+	if (std::cin.eof())
+		return;
+	while (imput.empty())
+	{
+		std::cout << "I'm sure you can think of something" << std::endl;
+		getline(std::cin, imput);
+		if (std::cin.eof())
+			return;
+	}
 	_contact[i].set_value(LAST_NAME, imput);
 
 	std::cout << "Please enter you contact nickname" << std::endl;
-	imput = PhoneBook::ft_getline();
+	getline(std::cin, imput);
+	if (std::cin.eof())
+		return;
+	while (imput.empty())
+	{
+		std::cout << "I'm sure you can think of something" << std::endl;
+		getline(std::cin, imput);
+		if (std::cin.eof())
+			return;
+	}
 	_contact[i].set_value(NICKNAME, imput);
 
 	std::cout << "Please enter you contact phone number" << std::endl;
-	imput = PhoneBook::ft_getline();
+	getline(std::cin, imput);
+	if (std::cin.eof())
+		return;
+	while (imput.empty())
+	{
+		std::cout << "I'm sure you can think of something" << std::endl;
+		getline(std::cin, imput);
+		if (std::cin.eof())
+			return;
+	}
 	_contact[i].set_value(PHONE_NUMBER, imput);
 
 	std::cout << "Please enter you contact darkest secret" << std::endl;
-	imput = PhoneBook::ft_getline();
+	getline(std::cin, imput);
+	if (std::cin.eof())
+		return;
+	while (imput.empty())
+	{
+		std::cout << "I'm sure you can think of something" << std::endl;
+		getline(std::cin, imput);
+		if (std::cin.eof())
+			return;
+	}
 	_contact[i].set_value(DARKEST_SECRET, imput);
 
 	return;
@@ -116,16 +147,18 @@ void	PhoneBook::search( int max ) {
 	
 	std::cout << "Please enter a contact number" <<std::endl;
 	
-	imput = ft_getline();
+	getline(std::cin, imput);
+	if (std::cin.eof())
+		return;
 	
 	if (!(imput.compare("EXIT")))
 		return;
 	while (imput.size() > 1 || imput.data()[0] < 0 + '0' || imput.data()[0] > max - 1 + '0')
 	{
-		std::cout << "their is no contact number : \"" << imput << "\" please enter a correct answer" << std::endl;
+		std::cout << "there is no contact number : \"" << imput << "\" please enter a correct answer" << std::endl;
 		
-		imput = ft_getline();
-		if (!(imput.compare("EXIT")))
+		getline(std::cin, imput);
+		if (std::cin.eof() || !(imput.compare("EXIT")))
 			return;
 	}
 	int	contact_nbr = stoi(imput);
