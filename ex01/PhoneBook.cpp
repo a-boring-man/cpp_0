@@ -6,7 +6,7 @@
 /*   By: jrinna <jrinna@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 14:36:01 by jrinna            #+#    #+#             */
-/*   Updated: 2022/09/08 10:58:05 by jrinna           ###   ########lyon.fr   */
+/*   Updated: 2023/07/18 15:04:46 by jrinna           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #include <iomanip>
 #include "PhoneBook.hpp"
 #include <string.h>
+#include <string>
 #include <cstring>
+#include <cstdlib>
 
 PhoneBook::PhoneBook( void ) {
 
@@ -161,7 +163,7 @@ void	PhoneBook::search( int max ) {
 		if (std::cin.eof() || !(imput.compare("EXIT")))
 			return;
 	}
-	int	contact_nbr = stoi(imput);
+	int	contact_nbr = atoi(imput.c_str());
 	while (contact_nbr < 0 || contact_nbr > max - 1)
 	{
 		std::cout << "this contact doesn't exist, please enter a contact number" << std::endl;
